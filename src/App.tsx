@@ -117,6 +117,9 @@ function App() {
               <button className="rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-neutral-900 shadow-lg shadow-black/20 transition hover:bg-amber-300">
                 Découvrir la collection
               </button>
+              <button className="rounded-full border border-amber-200/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-200 transition hover:bg-amber-200/10">
+                Explorer nos rituels
+              </button>
               <a
                 href="#presentation"
                 className="rounded-full border border-amber-200/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-200 transition hover:bg-amber-200/10"
