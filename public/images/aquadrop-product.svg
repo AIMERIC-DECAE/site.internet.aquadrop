@@ -1,0 +1,63 @@
+<svg viewBox="0 0 520 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="productTitle productDesc">
+  <title id="productTitle">Présentation du produit AquaDrop</title>
+  <desc id="productDesc">Trois flacons de savon moussant avec des bulles et des reflets lumineux</desc>
+  <rect x="20" y="30" width="480" height="360" rx="36" fill="url(#bg)" />
+  <g filter="url(#glow)">
+    <circle cx="120" cy="140" r="42" fill="#6EE7B7" fill-opacity="0.5" />
+    <circle cx="400" cy="110" r="48" fill="#99F6E4" fill-opacity="0.45" />
+    <circle cx="300" cy="320" r="60" fill="#5EEAD4" fill-opacity="0.35" />
+  </g>
+  <g filter="url(#shadow)">
+    <ellipse cx="160" cy="320" rx="72" ry="22" fill="#064E3B" fill-opacity="0.45" />
+    <ellipse cx="260" cy="340" rx="80" ry="24" fill="#064E3B" fill-opacity="0.38" />
+    <ellipse cx="360" cy="320" rx="72" ry="22" fill="#064E3B" fill-opacity="0.45" />
+  </g>
+  <g transform="translate(40 80)">
+    <rect x="60" y="16" width="40" height="28" rx="8" fill="#34D399" fill-opacity="0.65" />
+    <path d="M76 44h8v24h-8z" fill="#34D399" fill-opacity="0.35" />
+    <rect x="52" y="64" width="56" height="210" rx="28" fill="#F0FDFA" />
+    <rect x="52" y="64" width="56" height="210" rx="28" fill="#FFFFFF" fill-opacity="0.16" />
+    <rect x="60" y="104" width="40" height="104" rx="20" fill="#34D399" fill-opacity="0.35" />
+    <rect x="68" y="128" width="24" height="52" rx="12" fill="#34D399" fill-opacity="0.6" />
+    <path d="M56 272h48c0 16-12 28-24 28s-24-12-24-28z" fill="#0F172A" fill-opacity="0.45" />
+    <circle cx="80" cy="214" r="6" fill="#F8FAFC" fill-opacity="0.6" />
+    <circle cx="96" cy="146" r="4" fill="#F8FAFC" fill-opacity="0.5" />
+    <circle cx="72" cy="176" r="3" fill="#F8FAFC" fill-opacity="0.35" />
+  </g>
+  <g transform="translate(180 80)">
+    <rect x="60" y="16" width="40" height="28" rx="8" fill="#14B8A6" fill-opacity="0.65" />
+    <path d="M76 44h8v24h-8z" fill="#14B8A6" fill-opacity="0.35" />
+    <rect x="52" y="64" width="56" height="210" rx="28" fill="#ECFEFF" />
+    <rect x="52" y="64" width="56" height="210" rx="28" fill="#FFFFFF" fill-opacity="0.16" />
+    <rect x="60" y="104" width="40" height="104" rx="20" fill="#14B8A6" fill-opacity="0.35" />
+    <rect x="68" y="128" width="24" height="52" rx="12" fill="#14B8A6" fill-opacity="0.6" />
+    <path d="M56 272h48c0 16-12 28-24 28s-24-12-24-28z" fill="#0F172A" fill-opacity="0.45" />
+    <circle cx="80" cy="214" r="6" fill="#F8FAFC" fill-opacity="0.6" />
+    <circle cx="96" cy="146" r="4" fill="#F8FAFC" fill-opacity="0.5" />
+    <circle cx="72" cy="176" r="3" fill="#F8FAFC" fill-opacity="0.35" />
+  </g>
+  <g transform="translate(320 80)">
+    <rect x="60" y="16" width="40" height="28" rx="8" fill="#FACC15" fill-opacity="0.65" />
+    <path d="M76 44h8v24h-8z" fill="#FACC15" fill-opacity="0.35" />
+    <rect x="52" y="64" width="56" height="210" rx="28" fill="#FEFCE8" />
+    <rect x="52" y="64" width="56" height="210" rx="28" fill="#FFFFFF" fill-opacity="0.16" />
+    <rect x="60" y="104" width="40" height="104" rx="20" fill="#FACC15" fill-opacity="0.35" />
+    <rect x="68" y="128" width="24" height="52" rx="12" fill="#FACC15" fill-opacity="0.6" />
+    <path d="M56 272h48c0 16-12 28-24 28s-24-12-24-28z" fill="#0F172A" fill-opacity="0.45" />
+    <circle cx="80" cy="214" r="6" fill="#F8FAFC" fill-opacity="0.6" />
+    <circle cx="96" cy="146" r="4" fill="#F8FAFC" fill-opacity="0.5" />
+    <circle cx="72" cy="176" r="3" fill="#F8FAFC" fill-opacity="0.35" />
+  </g>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="30" x2="500" y2="390" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#022C22" />
+      <stop offset="100%" stop-color="#064E3B" />
+    </linearGradient>
+    <filter id="shadow" x="60" y="278" width="400" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+    </filter>
+    <filter id="glow" x="40" y="40" width="440" height="320" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="24" result="blur" />
+    </filter>
+  </defs>
+</svg>

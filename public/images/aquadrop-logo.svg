@@ -1,0 +1,19 @@
+<svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logoTitle logoDesc">
+  <title id="logoTitle">Logo AquaDrop</title>
+  <desc id="logoDesc">Une goutte d’eau contenant une pastille pétillante</desc>
+  <defs>
+    <linearGradient id="drop" x1="70" y1="0" x2="70" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9AF6E3" />
+      <stop offset="100%" stop-color="#34D399" />
+    </linearGradient>
+    <radialGradient id="tablet" cx="0" cy="0" r="1" gradientTransform="translate(70 85) scale(28)" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F9FAFB" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#D1FAE5" stop-opacity="0.3" />
+    </radialGradient>
+  </defs>
+  <path d="M70 10C70 10 22 66 22 96C22 120.301 43.699 138 68 138C92.301 138 114 120.301 114 96C114 66 70 10 70 10Z" fill="url(#drop)" />
+  <circle cx="70" cy="85" r="26" fill="url(#tablet)" />
+  <circle cx="70" cy="85" r="14" fill="#ECFEFF" fill-opacity="0.9" />
+  <circle cx="70" cy="85" r="6" fill="#10B981" fill-opacity="0.8" />
+  <path d="M70 34C70 34 44 66 44 90C44 109.882 58.118 124 78 124" stroke="#047857" stroke-width="4" stroke-linecap="round" stroke-opacity="0.35" />
+</svg>

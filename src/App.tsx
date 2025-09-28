@@ -1,4 +1,11 @@
-const features = [
+// Types
+type Feature = {
+  title: string;
+  description: string;
+};
+
+// Données
+const features: Feature[] = [
   {
     title: 'Formule éco-responsable',
     description:
@@ -16,6 +23,7 @@ const features = [
   },
 ];
 
+// Logo (SVG inline)
 const Logo = () => (
   <svg
     className="w-28 text-emerald-300 sm:w-36"
@@ -32,7 +40,14 @@ const Logo = () => (
         <stop offset="0%" stopColor="#9AF6E3" />
         <stop offset="100%" stopColor="#34D399" />
       </linearGradient>
-      <radialGradient id="tablet" cx="0" cy="0" r="1" gradientTransform="translate(70 85) scale(28)" gradientUnits="userSpaceOnUse">
+      <radialGradient
+        id="tablet"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientTransform="translate(70 85) scale(28)"
+        gradientUnits="userSpaceOnUse"
+      >
         <stop offset="0%" stopColor="#F9FAFB" stopOpacity="0.95" />
         <stop offset="100%" stopColor="#D1FAE5" stopOpacity="0.3" />
       </radialGradient>
@@ -54,6 +69,29 @@ const Logo = () => (
   </svg>
 );
 
+// Bottle doit être défini AVANT ProductIllustration
+type BottleProps = {
+  x: number;
+  tone: string;
+  accent: string;
+};
+
+const Bottle = ({ x, tone, accent }: BottleProps) => (
+  <g transform={`translate(${x - 80} 80)`}>
+    <rect x="60" y="16" width="40" height="28" rx="8" fill={accent} opacity="0.65" />
+    <path d="M76 44h8v24h-8z" fill={accent} opacity="0.35" />
+    <rect x="52" y="64" width="56" height="210" rx="28" fill={tone} />
+    <rect x="52" y="64" width="56" height="210" rx="28" fill="#FFFFFF" fillOpacity="0.16" />
+    <rect x="60" y="104" width="40" height="104" rx="20" fill={accent} fillOpacity="0.35" />
+    <rect x="68" y="128" width="24" height="52" rx="12" fill={accent} fillOpacity="0.6" />
+    <path d="M56 272h48c0 16-12 28-24 28s-24-12-24-28z" fill="#0F172A" fillOpacity="0.45" />
+    <circle cx="80" cy="214" r="6" fill="#F8FAFC" opacity="0.6" />
+    <circle cx="96" cy="146" r="4" fill="#F8FAFC" opacity="0.5" />
+    <circle cx="72" cy="176" r="3" fill="#F8FAFC" opacity="0.35" />
+  </g>
+);
+
+// Illustration produit (utilise Bottle)
 const ProductIllustration = () => (
   <svg
     className="w-full max-w-xl"
@@ -94,31 +132,7 @@ const ProductIllustration = () => (
   </svg>
 );
 
-type BottleProps = {
-  x: number;
-  tone: string;
-  accent: string;
-};
-
-const Bottle = ({ x, tone, accent }: BottleProps) => (
-  <g transform={`translate(${x - 80} 80)`}>
-    <rect x="60" y="16" width="40" height="28" rx="8" fill={accent} opacity="0.65" />
-    <path d="M76 44h8v24h-8z" fill={accent} opacity="0.35" />
-    <rect x="52" y="64" width="56" height="210" rx="28" fill={tone} />
-    <rect x="52" y="64" width="56" height="210" rx="28" fill="#FFFFFF" fillOpacity="0.16" />
-    <rect x="60" y="104" width="40" height="104" rx="20" fill={accent} fillOpacity="0.35" />
-    <rect x="68" y="128" width="24" height="52" rx="12" fill={accent} fillOpacity="0.6" />
-    <path
-      d="M56 272h48c0 16-12 28-24 28s-24-12-24-28z"
-      fill="#0F172A"
-      fillOpacity="0.45"
-    />
-    <circle cx="80" cy="214" r="6" fill="#F8FAFC" opacity="0.6" />
-    <circle cx="96" cy="146" r="4" fill="#F8FAFC" opacity="0.5" />
-    <circle cx="72" cy="176" r="3" fill="#F8FAFC" opacity="0.35" />
-  </g>
-);
-
+// App
 function App() {
   return (
     <div className="min-h-screen bg-[#0f1c17] text-white">
@@ -193,3 +207,4 @@ function App() {
 }
 
 export default App;
+
