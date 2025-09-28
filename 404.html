@@ -2,9 +2,9 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=/site.internet.aquadrop/" />
-    <link rel="canonical" href="/site.internet.aquadrop/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Redirection...</title>
+    <meta name="robots" content="noindex" />
     <style>
       body {
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -16,20 +16,56 @@
         background-color: #f7f5f0;
         color: #0b3d2e;
       }
+
+      .message {
+        max-width: 32rem;
+        padding: 2rem 2.5rem;
+        text-align: center;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: 0 12px 32px rgba(11, 61, 46, 0.16);
+      }
     </style>
   </head>
   <body>
-    <p>Redirection vers la page d'accueil...</p>
+    <div class="message">
+      <p>Redirection vers la page demandée...</p>
+      <noscript>
+        JavaScript est requis pour charger correctement cette page. Veuillez
+        <a href="/site.internet.aquadrop/">retourner à l'accueil</a>.
+      </noscript>
+    </div>
     <script>
-      (function () {
+      (async () => {
         const repoBase = '/site.internet.aquadrop/';
-        const redirectUrl = `${repoBase}`;
-        if (typeof window !== 'undefined') {
-          if (typeof window.location.replace === 'function') {
-            window.location.replace(redirectUrl);
-          } else {
-            window.location.href = redirectUrl;
+        const { pathname, search, hash } = window.location;
+        const relativePath = pathname.startsWith(repoBase)
+          ? pathname.slice(repoBase.length)
+          : pathname.replace(/^\/+/u, '');
+
+        try {
+          const response = await fetch(`${repoBase}index.html`, {
+            cache: 'reload',
+            redirect: 'follow',
+          });
+
+          if (!response.ok) {
+            throw new Error(`Impossible de charger index.html (statut ${response.status}).`);
           }
+
+          const html = await response.text();
+          document.open('text/html', 'replace');
+          document.write(html);
+          document.close();
+
+          const trimmedBase = repoBase.endsWith('/') ? repoBase.slice(0, -1) : repoBase;
+          const sanitizedRelative = relativePath.replace(/^\/+/u, '');
+          const normalizedPath = sanitizedRelative ? `/${sanitizedRelative}` : '/';
+          const newPath = `${trimmedBase}${normalizedPath}`;
+          window.history.replaceState(null, '', `${newPath}${search}${hash}`);
+        } catch (error) {
+          console.error('Redirection SPA impossible:', error);
+          window.location.replace(`${repoBase}`);
         }
       })();
     </script>

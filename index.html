@@ -1407,10 +1407,12 @@
             <div class="footer-bottom">
                 <p>&copy; 2024 AquaDrop - Mini-Entreprise LJE. Tous droits réservés.</p>
                 <p>Développé avec 💚 pour un avenir plus propre</p>
-                <p id="build-info">Build: --/--/----</p>
+                <p id="build-info">Build: en cours...</p>
             </div>
         </div>
     </footer>
+
+    <script type="module" src="/src/build-info.ts"></script>
 
     <script>
         // Splash Screen
@@ -1564,12 +1566,6 @@
                 card.style.animationDelay = `${index * 0.1}s`;
             });
 
-            const buildInfo = document.getElementById('build-info');
-            if (buildInfo) {
-                const buildDate = new Date();
-                const formattedDate = buildDate.toLocaleDateString('fr-FR');
-                buildInfo.textContent = `Build: ${formattedDate}`;
-            }
         });
     </script>
 </body>
