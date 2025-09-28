@@ -143,7 +143,7 @@ function App() {
                 className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200 transition hover:text-amber-100"
               >
                 Voir tous les produits
-                <span aria-hidden className="text-lg">→</span>
+                <span aria-hidden="true" className="text-lg">→</span>
               </a>
             </div>
 
