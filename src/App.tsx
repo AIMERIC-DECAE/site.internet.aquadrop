@@ -1,8 +1,10 @@
+// Types
 type Feature = {
   title: string;
   description: string;
 };
 
+// Données
 const features: Feature[] = [
   {
     title: 'Formule éco-responsable',
@@ -21,15 +23,121 @@ const features: Feature[] = [
   },
 ];
 
+// Logo (SVG inline)
+const Logo = () => (
+  <svg
+    className="w-28 text-emerald-300 sm:w-36"
+    viewBox="0 0 140 140"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-labelledby="logoTitle logoDesc"
+  >
+    <title id="logoTitle">Logo AquaDrop</title>
+    <desc id="logoDesc">Une goutte d’eau contenant une pastille pétillante</desc>
+    <defs>
+      <linearGradient id="drop" x1="70" y1="0" x2="70" y2="140" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#9AF6E3" />
+        <stop offset="100%" stopColor="#34D399" />
+      </linearGradient>
+      <radialGradient
+        id="tablet"
+        cx="0"
+        cy="0"
+        r="1"
+        gradientTransform="translate(70 85) scale(28)"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0%" stopColor="#F9FAFB" stopOpacity="0.95" />
+        <stop offset="100%" stopColor="#D1FAE5" stopOpacity="0.3" />
+      </radialGradient>
+    </defs>
+    <path
+      d="M70 10C70 10 22 66 22 96C22 120.301 43.699 138 68 138C92.301 138 114 120.301 114 96C114 66 70 10 70 10Z"
+      fill="url(#drop)"
+    />
+    <circle cx="70" cy="85" r="26" fill="url(#tablet)" />
+    <circle cx="70" cy="85" r="14" fill="#ECFEFF" opacity="0.9" />
+    <circle cx="70" cy="85" r="6" fill="#10B981" opacity="0.8" />
+    <path
+      d="M70 34C70 34 44 66 44 90C44 109.882 58.118 124 78 124"
+      stroke="#047857"
+      strokeWidth="4"
+      strokeLinecap="round"
+      opacity="0.35"
+    />
+  </svg>
+);
+
+// Bottle doit être défini AVANT ProductIllustration
+type BottleProps = {
+  x: number;
+  tone: string;
+  accent: string;
+};
+
+const Bottle = ({ x, tone, accent }: BottleProps) => (
+  <g transform={`translate(${x - 80} 80)`}>
+    <rect x="60" y="16" width="40" height="28" rx="8" fill={accent} opacity="0.65" />
+    <path d="M76 44h8v24h-8z" fill={accent} opacity="0.35" />
+    <rect x="52" y="64" width="56" height="210" rx="28" fill={tone} />
+    <rect x="52" y="64" width="56" height="210" rx="28" fill="#FFFFFF" fillOpacity="0.16" />
+    <rect x="60" y="104" width="40" height="104" rx="20" fill={accent} fillOpacity="0.35" />
+    <rect x="68" y="128" width="24" height="52" rx="12" fill={accent} fillOpacity="0.6" />
+    <path d="M56 272h48c0 16-12 28-24 28s-24-12-24-28z" fill="#0F172A" fillOpacity="0.45" />
+    <circle cx="80" cy="214" r="6" fill="#F8FAFC" opacity="0.6" />
+    <circle cx="96" cy="146" r="4" fill="#F8FAFC" opacity="0.5" />
+    <circle cx="72" cy="176" r="3" fill="#F8FAFC" opacity="0.35" />
+  </g>
+);
+
+// Illustration produit (utilise Bottle)
+const ProductIllustration = () => (
+  <svg
+    className="w-full max-w-xl"
+    viewBox="0 0 520 420"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+    aria-labelledby="productTitle productDesc"
+  >
+    <title id="productTitle">Présentation du produit AquaDrop</title>
+    <desc id="productDesc">Trois flacons de savon moussant avec des bulles et des reflets lumineux</desc>
+    <rect x="20" y="30" width="480" height="360" rx="36" fill="url(#bg)" />
+    <g filter="url(#glow)">
+      <circle cx="120" cy="140" r="42" fill="#6EE7B7" fillOpacity="0.5" />
+      <circle cx="400" cy="110" r="48" fill="#99F6E4" fillOpacity="0.45" />
+      <circle cx="300" cy="320" r="60" fill="#5EEAD4" fillOpacity="0.35" />
+    </g>
+    <g filter="url(#shadow)">
+      <ellipse cx="160" cy="320" rx="72" ry="22" fill="#064E3B" fillOpacity="0.45" />
+      <ellipse cx="260" cy="340" rx="80" ry="24" fill="#064E3B" fillOpacity="0.38" />
+      <ellipse cx="360" cy="320" rx="72" ry="22" fill="#064E3B" fillOpacity="0.45" />
+    </g>
+    <Bottle x={120} tone="#F0FDFA" accent="#34D399" />
+    <Bottle x={260} tone="#ECFEFF" accent="#14B8A6" />
+    <Bottle x={400} tone="#FEFCE8" accent="#FACC15" />
+    <defs>
+      <linearGradient id="bg" x1="20" y1="30" x2="500" y2="390" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#022C22" />
+        <stop offset="100%" stopColor="#064E3B" />
+      </linearGradient>
+      <filter id="shadow" x="60" y="278" width="400" height="120" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feGaussianBlur stdDeviation="12" result="blur" />
+      </filter>
+      <filter id="glow" x="40" y="40" width="440" height="320" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+        <feGaussianBlur stdDeviation="24" result="blur" />
+      </filter>
+    </defs>
+  </svg>
+);
+
+// App
 function App() {
   return (
     <div className="min-h-screen bg-[#0f1c17] text-white">
       <header className="flex flex-col items-center gap-4 px-6 pt-12 pb-10 text-center">
-        <img
-          src="/images/aquadrop-logo.svg"
-          alt="Logo AquaDrop"
-          className="w-28 sm:w-36"
-        />
+        <Logo />
         <div>
           <p className="uppercase tracking-[0.4em] text-sm text-emerald-300">AquaDrop</p>
           <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">Savon moussant durable</h1>
@@ -60,11 +168,7 @@ function App() {
               </div>
             </div>
             <figure className="flex justify-center">
-              <img
-                src="/images/aquadrop-product.svg"
-                alt="Présentation du produit AquaDrop"
-                className="w-full max-w-xl"
-              />
+              <ProductIllustration />
             </figure>
           </div>
         </section>
@@ -103,3 +207,4 @@ function App() {
 }
 
 export default App;
+
