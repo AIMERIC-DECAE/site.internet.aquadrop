@@ -37,8 +37,13 @@
     </div>
     <script>
       (async () => {
-        const repoBase = '/site.internet.aquadrop/';
+        const defaultBase = '/site.internet.aquadrop/';
         const { pathname, search, hash } = window.location;
+        const normalizedDefault = defaultBase.replace(/\/+$/u, '');
+        const repoBase =
+          pathname === normalizedDefault || pathname.startsWith(defaultBase)
+            ? defaultBase
+            : '/';
         const relativePath = pathname.startsWith(repoBase)
           ? pathname.slice(repoBase.length)
           : pathname.replace(/^\/+/u, '');
