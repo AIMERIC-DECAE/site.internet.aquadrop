@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaDrop - La douche éco-luxe, en pastille</title>
+    <meta name="description" content="Découvrez AquaDrop : des pastilles de gel douche révolutionnaires dans un flacon réutilisable rPET. Réduisez le plastique à usage unique tout en gardant une expérience luxueuse.">
+    <meta name="keywords" content="gel douche écologique, pastilles douche, flacon réutilisable, cosmétiques durables, AquaDrop">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="AquaDrop - La douche éco-luxe, en pastille">
+    <meta property="og:description" content="Un flacon réutilisable, des recharges compactes, moins de plastique au quotidien.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aquadrop.fr">
+    <meta property="og:image" content="https://aquadrop.fr/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%230B3D2E'/%3E%3Cpath d='M50 25c-8 0-15 8-15 18 0 12 15 25 15 25s15-13 15-25c0-10-7-18-15-18z' fill='%2323B5D3'/%3E%3C/svg%3E">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --deep-green: #0B3D2E;
+            --forest-green: #1F6F57;
+            --aqua: #23B5D3;
+            --soft-gold: #C6A15B;
+            --ivory: #F7F5F0;
+            --anthracite: #1C1C1C;
+            --white: #FFFFFF;
+            --shadow-soft: 0 8px 32px rgba(11, 61, 46, 0.12);
+            --shadow-medium: 0 12px 48px rgba(11, 61, 46, 0.16);
+            --border-radius: 20px;
+            --border-radius-small: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--anthracite);
+            overflow-x: hidden;
+            background: var(--ivory);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Fraunces', serif;
+            line-height: 1.2;
+            font-weight: 600;
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Focus styles */
+        *:focus-visible {
+            outline: 2px solid var(--aqua);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* Splash Screen */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--deep-green) 0%, var(--forest-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 1;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        .splash-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .splash-content {
+            background: var(--ivory);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow-medium);
+            animation: splashPop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .splash-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--aqua), var(--deep-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .splash-title {
+            font-size: 2rem;
+            color: var(--deep-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .splash-subtitle {
+            color: var(--forest-green);
+            font-size: 1rem;
+        }
+
+        @keyframes splashPop {
+            0% { transform: scale(0.8) translateY(20px); opacity: 0; }
+            100% { transform: scale(1) translateY(0); opacity: 1; }
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(247, 245, 240, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(198, 161, 91, 0.2);
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            background: rgba(247, 245, 240, 0.98);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--aqua), var(--deep-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-green);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--anthracite);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--aqua);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--soft-gold);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+            padding: 8px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--deep-green);
+            transition: var(--transition);
+            border-radius: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--ivory);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 3rem;
+                gap: 2rem;
+                transition: var(--transition);
+                backdrop-filter: blur(20px);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .mobile-menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .mobile-menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--deep-green) 0%, var(--forest-green) 60%, rgba(35, 181, 211, 0.8) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(198, 161, 91, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(35, 181, 211, 0.1) 0%, transparent 50%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.01)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            z-index: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 2;
+            position: relative;
+            max-width: 900px;
+            padding: 0 2rem;
+            animation: heroFadeIn 1.2s ease-out 0.3s both;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+        }
+
+        .cta-primary, .cta-secondary {
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 1rem;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary {
+            background: var(--soft-gold);
+            color: var(--anthracite);
+            border-color: var(--soft-gold);
+        }
+
+        .cta-primary:hover {
+            background: transparent;
+            color: var(--soft-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(198, 161, 91, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--white);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cta-secondary:hover {
+            background: var(--white);
+            color: var(--deep-green);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(198, 161, 91, 0.3);
+        }
+
+        @keyframes heroFadeIn {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background: var(--deep-green);
+            color: var(--ivory);
+        }
+
+        .section-dark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="1" fill="rgba(255,255,255,0.02)"/><circle cx="15" cy="15" r="0.5" fill="rgba(255,255,255,0.01)"/><circle cx="45" cy="45" r="0.5" fill="rgba(255,255,255,0.01)"/></svg>');
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .section-dark > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--deep-green);
+        }
+
+        .section-dark .section-title {
+            color: var(--ivory);
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            border: 1px solid rgba(198, 161, 91, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--aqua), var(--soft-gold));
+        }
+
+        .step-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--aqua), var(--forest-green));
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .step-icon::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--aqua), var(--soft-gold));
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        .step-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--deep-green);
+        }
+
+        .step-card p {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .kpi-item {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius-small);
+            border: 1px solid rgba(198, 161, 91, 0.2);
+        }
+
+        .kpi-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--soft-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .kpi-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            border: 1px solid rgba(11, 61, 46, 0.08);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .product-image {
+            height: 280px;
+            background: linear-gradient(135deg, var(--ivory), #e8f4f8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--forest-green);
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(35, 181, 211, 0.1) 0%, transparent 70%);
+        }
+
+        .product-content {
+            padding: 2.5rem;
+        }
+
+        .product-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--deep-green);
+        }
+
+        .product-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--soft-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-description {
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            color: var(--anthracite);
+        }
+
+        .product-cta {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--deep-green);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-cta:hover {
+            background: var(--forest-green);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(11, 61, 46, 0.3);
+        }
+
+        .product-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .product-cta:hover::before {
+            left: 100%;
+        }
+
+        /* Impact Section */
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(198, 161, 91, 0.2);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--soft-gold);
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-weight: 600;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--border-radius-small);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(11, 61, 46, 0.08);
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-medium);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 2rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--deep-green);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--aqua);
+        }
+
+        .faq-answer {
+            padding: 0 2rem 2rem;
+            display: none;
+            line-height: 1.7;
+            color: var(--anthracite);
+        }
+
+        .faq-answer.active {
+            display: block;
+            animation: fadeInDown 0.3s ease-out;
+        }
+
+        .faq-icon {
+            transition: var(--transition);
+            color: var(--soft-gold);
+            font-size: 1.2rem;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Team Section */
+        .team-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .team-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--soft-gold), #d4b36a);
+            color: var(--anthracite);
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .team-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .team-mission {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: var(--border-radius-small);
+            border: 1px solid rgba(198, 161, 91, 0.2);
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--soft-gold);
+            color: var(--anthracite);
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+            background: #d4b36a;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(11, 61, 46, 0.08);
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--deep-green);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(11, 61, 46, 0.1);
+            border-radius: var(--border-radius-small);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--ivory);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--aqua);
+            background: var(--white);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            background: var(--deep-green);
+            color: var(--white);
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .form-submit:hover {
+            background: var(--forest-green);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--deep-green);
+            color: var(--ivory);
+            padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><circle cx="30" cy="30" r="1" fill="rgba(255,255,255,0.02)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .footer > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            border: 1px solid rgba(198, 161, 91, 0.2);
+            transition: var(--transition);
+        }
+
+        .trust-badge:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--soft-gold);
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--ivory);
+            text-decoration: none;
+            line-height: 1.8;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+            color: var(--aqua);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-ctas {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-primary, .cta-secondary {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .section {
+                padding: 4rem 0;
+            }
+
+            .steps-grid,
+            .products-grid,
+            .impact-stats {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                min-width: unset;
+            }
+
+            .splash-content {
+                padding: 2rem;
+                margin: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-content">
+            <div class="splash-logo">A</div>
+            <h1 class="splash-title">AquaDrop</h1>
+            <p class="splash-subtitle">La douche éco-luxe</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <div class="logo-section">
+                <div class="logo">A</div>
+                <span class="logo-text">AquaDrop</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#boutique">Boutique</a></li>
+                <li><a href="#how-it-works">Comment ça marche</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#team">Équipe</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>La douche éco-luxe, en pastille.</h1>
+            <p class="hero-subtitle">Un flacon réutilisable, des recharges compactes, moins de plastique au quotidien.</p>
+            <div class="hero-ctas">
+                <a href="#boutique" class="cta-primary">Découvrir le kit</a>
+                <a href="#boutique" class="cta-secondary">Voir les recharges</a>
+            </div>
+            <div class="hero-badges">
+                <div class="hero-badge">
+                    <span>🇪🇺</span>
+                    Made in EU
+                </div>
+                <div class="hero-badge">
+                    <span>♻️</span>
+                    Flacon rPET
+                </div>
+                <div class="hero-badge">
+                    <span>🌱</span>
+                    Moins de plastique
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <h2 class="section-title fade-in">Comment ça marche</h2>
+            <p class="section-subtitle fade-in">Trois étapes simples pour une douche luxueuse et écologique</p>
+            
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-icon">1</div>
+                    <h3>Remplir d'eau</h3>
+                    <p>Remplissez votre flacon réutilisable rPET avec de l'eau tiède jusqu'au repère indiqué.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-icon">2</div>
+                    <h3>Ajouter la pastille</h3>
+                    <p>Insérez une pastille AquaDrop dans le flacon et attendez qu'elle se dissolve complètement.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-icon">3</div>
+                    <h3>Pomper et mousser</h3>
+                    <p>Pompez pour créer une mousse onctueuse et profitez de votre gel douche premium.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KPI Section -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="kpi-grid">
+                <div class="kpi-item fade-in">
+                    <div class="kpi-number">16-20</div>
+                    <div class="kpi-label">douches par pastille</div>
+                </div>
+                <div class="kpi-item fade-in">
+                    <div class="kpi-number">&lt; 90s</div>
+                    <div class="kpi-label">dissolution complète</div>
+                </div>
+                <div class="kpi-item fade-in">
+                    <div class="kpi-number">3-6</div>
+                    <div class="kpi-label">mois après dilution</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="boutique">
+        <div class="container">
+            <h2 class="section-title fade-in">Nos Produits</h2>
+            <p class="section-subtitle fade-in">Découvrez notre gamme de produits éco-conçus</p>
+            
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">🧴</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Kit AquaDrop Complet</h3>
+                        <div class="product-price">23,90 €</div>
+                        <p class="product-description">
+                            1 flacon réutilisable rPET givré avec pompe moussante + 4 pastilles de gel douche (mix des 3 parfums). Idéal pour commencer votre routine éco-luxe.
+                        </p>
+                        <button class="product-cta">Ajouter au panier</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">🌿</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Recharges Sport</h3>
+                        <div class="product-price">4,20 €</div>
+                        <p class="product-description">
+                            Pack de recharges énergisantes à la menthe et eucalyptus. Parfait après le sport pour une sensation de fraîcheur intense et revitalisante.
+                        </p>
+                        <button class="product-cta">Ajouter au panier</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">🍃</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Recharges Écolo</h3>
+                        <div class="product-price">4,20 €</div>
+                        <p class="product-description">
+                            Formule 100% naturelle aux extraits de thé vert et aloe vera. Doux pour la peau et respectueux de l'environnement, parfum herbacé délicat.
+                        </p>
+                        <button class="product-cta">Ajouter au panier</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">🌸</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Recharges Sensitive</h3>
+                        <div class="product-price">4,20 €</div>
+                        <p class="product-description">
+                            Spécialement formulé pour les peaux sensibles avec camomille et avoine. Hypoallergénique et sans parfum pour un confort optimal.
+                        </p>
+                        <button class="product-cta">Ajouter au panier</button>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">🎁</div>
+                    <div class="product-content">
+                        <h3 class="product-title">Pack 3 Recharges</h3>
+                        <div class="product-price">11,70 €</div>
+                        <p class="product-description">
+                            Économisez avec notre pack découverte : 1 recharge de chaque parfum (Sport, Écolo, Sensitive). Livraison offerte dès 35€ !
+                        </p>
+                        <button class="product-cta">Ajouter au panier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section section-dark" id="impact">
+        <div class="container">
+            <h2 class="section-title fade-in">Notre Impact</h2>
+            <p class="section-subtitle fade-in">Des chiffres qui parlent pour notre planète</p>
+            
+            <div class="impact-stats">
+                <div class="stat-card fade-in">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Moins de plastique qu'un flacon classique</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Flacon réutilisable rPET recyclé</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">UE</div>
+                    <div class="stat-label">Conformité européenne PIF, CPSR, CPNP</div>
+                </div>
+                <div class="stat-card fade-in">
+                    <div class="stat-number">0</div>
+                    <div class="stat-label">Déchet plastique avec nos recharges</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">Questions Fréquentes</h2>
+            <p class="section-subtitle fade-in">Tout ce que vous devez savoir sur AquaDrop</p>
+            
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Combien de douches par pastille ?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Chaque pastille AquaDrop permet de réaliser entre 16 et 20 douches selon votre utilisation. Une pastille dissoute dans 250ml d'eau vous offre un gel douche premium longue durée.
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        La mousse est-elle aussi efficace ?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Absolument ! Notre pompe moussante crée une mousse riche et onctueuse identique aux gels douche traditionnels. La concentration en agents nettoyants est optimisée pour une efficacité maximale.
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Convient-il aux peaux sensibles ?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Oui ! Notre gamme "Sensitive" est spécialement formulée pour les peaux sensibles, sans parfum et avec des ingrédients apaisants comme la camomille. Tous nos produits sont testés dermatologiquement.
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Comment se conservent les pastilles ?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Les pastilles se conservent 18 à 24 mois dans leur emballage d'origine, à l'abri de l'humidité. Une fois dissoutes dans l'eau, utilisez le gel douche dans les 3 à 6 mois pour une efficacité optimale.
+                    </div>
+                </div>
+
+                <div class="faq-item fade-in">
+                    <button class="faq-question">
+                        Quels sont les délais de livraison ?
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        Livraison en point relais (3,90€) ou à domicile (6,90€) en 3-5 jours ouvrés en France métropolitaine. Livraison gratuite à partir de 35€ d'achat. Expédition sous 24h pour toute commande passée avant 14h.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section section-dark" id="team">
+        <div class="container">
+            <div class="team-content fade-in">
+                <div class="team-badge">Projet Mini-Entreprise LJE</div>
+                <h2 class="section-title">L'Équipe AquaDrop</h2>
+                <p class="team-description">
+                    AquaDrop est née de l'imagination de trois étudiants passionnés par l'innovation durable. 
+                    Dans le cadre du concours Mini-Entreprise organisé par Entreprendre Pour Apprendre, 
+                    nous avons uni nos compétences pour créer une solution qui révolutionne l'industrie cosmétique.
+                </p>
+                <div class="team-mission">
+                    <strong>Notre mission :</strong> Prouver qu'innovation rime avec préservation de l'environnement, 
+                    et que les jeunes ont le pouvoir de changer le monde, une pastille à la fois.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title fade-in">Contactez-nous</h2>
+                <p class="section-subtitle fade-in">Une question ? Une suggestion ? Nous sommes là pour vous écouter.</p>
+                
+                <a href="mailto:decaeaimeric@gmail.com?subject=AquaDrop%20–%20Contact" class="contact-cta fade-in">
+                    <span>✉️</span>
+                    Écrire à l'équipe
+                </a>
+
+                <form class="contact-form fade-in" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Envoyer le message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <span>🔒</span>
+                    Paiement sécurisé
+                </div>
+                <div class="trust-badge">
+                    <span>🔄</span>
+                    Retour 14 jours
+                </div>
+                <div class="trust-badge">
+                    <span>🚚</span>
+                    Livraison offerte dès 35€
+                </div>
+            </div>
+
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AquaDrop</h3>
+                    <p>Révolutionnons ensemble l'industrie cosmétique pour un avenir plus durable.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Informations</h3>
+                    <p><a href="#mentions">Mentions légales</a></p>
+                    <p><a href="#cgv">CGV</a></p>
+                    <p><a href="#livraison">Livraison</a></p>
+                    <p><a href="#retours">Retours</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Confidentialité</h3>
+                    <p><a href="#confidentialite">Politique de confidentialité</a></p>
+                    <p><a href="#cookies">Gestion des cookies</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>📧 decaeaimeric@gmail.com</p>
+                    <p>🏫 Lycée La Joliverie, Nantes</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AquaDrop - Mini-Entreprise LJE. Tous droits réservés.</p>
+                <p>Développé avec 💚 pour un avenir plus propre</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Splash Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splashScreen');
+                splash.classList.add('fade-out');
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                }, 800);
+            }, 2500);
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuToggle.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    answer.classList.add('active');
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Product card interactions
+        document.querySelectorAll('.product-cta').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const originalText = button.textContent;
+                button.textContent = 'Ajouté !';
+                button.style.background = 'var(--aqua)';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = 'var(--deep-green)';
+                }, 2000);
+            });
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            const subject = encodeURIComponent('AquaDrop – Contact de ' + name);
+            const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            
+            window.location.href = `mailto:decaeaimeric@gmail.com?subject=${subject}&body=${body}`;
+        });
+
+        // Parallax effect for hero section (subtle)
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.3}px)`;
+            }
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        });
+
+        // Add loading states and micro-interactions
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add stagger animation to cards
+            const cards = document.querySelectorAll('.step-card, .product-card, .stat-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
