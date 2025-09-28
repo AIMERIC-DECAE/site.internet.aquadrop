@@ -1,3 +1,55 @@
+const LogoMark = () => (
+  <div className="inline-flex items-center gap-4 self-start rounded-3xl bg-neutral-950/80 px-5 py-3 shadow-2xl shadow-black/40 ring-1 ring-amber-500/30 backdrop-blur">
+    <svg
+      className="h-14 w-14"
+      viewBox="0 0 120 120"
+      role="img"
+      aria-labelledby="aquadrop-logo-title"
+    >
+      <title id="aquadrop-logo-title">AquaDrop</title>
+      <defs>
+        <linearGradient id="drop-fill" x1="50%" x2="50%" y1="0%" y2="100%">
+          <stop offset="0%" stopColor="#2CA6B5" />
+          <stop offset="100%" stopColor="#0D6E78" />
+        </linearGradient>
+        <linearGradient id="stone-fill" x1="50%" x2="50%" y1="0%" y2="100%">
+          <stop offset="0%" stopColor="#A5E5E8" />
+          <stop offset="100%" stopColor="#3AADB5" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M60 6C60 6 22 60 22 86c0 23.748 17.76 38 38 38s38-14.252 38-38C98 60 60 6 60 6Z"
+        fill="url(#drop-fill)"
+        stroke="#8C6239"
+        strokeWidth="5"
+        strokeLinejoin="round"
+      />
+      <ellipse
+        cx="60"
+        cy="86"
+        rx="32"
+        ry="20"
+        fill="url(#stone-fill)"
+        stroke="#8C6239"
+        strokeWidth="5"
+      />
+      <path
+        d="M92 88c0 10.493-14.327 19-32 19s-32-8.507-32-19"
+        fill="none"
+        stroke="#D8B177"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+      <circle cx="28" cy="66" r="4" fill="#F4E4C9" stroke="#8C6239" strokeWidth="2" />
+      <circle cx="96" cy="66" r="4" fill="#F4E4C9" stroke="#8C6239" strokeWidth="2" />
+      <circle cx="40" cy="54" r="3" fill="#E8CFA3" />
+      <circle cx="80" cy="54" r="3" fill="#E8CFA3" />
+      <circle cx="60" cy="44" r="3.5" fill="#F4E4C9" stroke="#8C6239" strokeWidth="1.5" />
+    </svg>
+    <span className="font-serif text-2xl tracking-[0.25em] text-amber-100 sm:text-3xl">AquaDrop</span>
+  </div>
+);
+
 const products = [
   {
     name: "Ritual d'Aqua",
@@ -46,6 +98,7 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-neutral-900/40" />
 
         <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center gap-12 px-6 py-24 sm:px-10 lg:px-16">
+
           <div className="inline-flex items-center gap-3 self-start rounded-full bg-amber-500/20 px-5 py-2 text-sm font-medium uppercase tracking-[0.3em] text-amber-200 backdrop-blur-md">
             Nouveauté
           </div>
@@ -90,7 +143,7 @@ function App() {
                 className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200 transition hover:text-amber-100"
               >
                 Voir tous les produits
-                <span aria-hidden className="text-lg">→</span>
+                <span aria-hidden="true" className="text-lg">→</span>
               </a>
             </div>
 
