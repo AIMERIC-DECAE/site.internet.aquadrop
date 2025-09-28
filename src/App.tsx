@@ -117,9 +117,12 @@ function App() {
               <button className="rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-neutral-900 shadow-lg shadow-black/20 transition hover:bg-amber-300">
                 Découvrir la collection
               </button>
-              <button className="rounded-full border border-amber-200/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-200 transition hover:bg-amber-200/10">
-                Explorer nos rituels
-              </button>
+              <a
+                href="#presentation"
+                className="rounded-full border border-amber-200/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-200 transition hover:bg-amber-200/10"
+              >
+                Notre ambition
+              </a>
             </div>
           </div>
         </div>
@@ -176,6 +179,58 @@ function App() {
                   <div className="pointer-events-none absolute inset-x-10 bottom-6 h-12 rounded-full bg-amber-400/10 blur-3xl transition duration-700 group-hover:opacity-0" />
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="presentation"
+          className="relative overflow-hidden border-y border-amber-500/10 bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950 px-6 py-24 sm:px-10 lg:px-16"
+        >
+          <div className="absolute -left-24 -top-24 h-72 w-72 rounded-full bg-amber-500/20 blur-3xl" aria-hidden="true" />
+          <div className="absolute -bottom-32 -right-20 h-72 w-72 rounded-full bg-emerald-400/10 blur-3xl" aria-hidden="true" />
+          <div className="relative mx-auto flex max-w-5xl flex-col gap-12 text-center text-neutral-100">
+            <div className="space-y-5">
+              <p className="text-sm uppercase tracking-[0.55em] text-amber-400/80">Présentation</p>
+              <h2 className="text-3xl font-light leading-tight text-amber-50 sm:text-4xl">
+                Notre rêve : remporter la LJE
+              </h2>
+              <p className="mx-auto max-w-3xl text-base leading-relaxed text-neutral-300 sm:text-lg">
+                AquaDrop est né de la conviction que le bien-être quotidien mérite une attention toute particulière. Notre
+                équipe se dépasse chaque jour pour imaginer des expériences sensorielles uniques, fidèles aux standards
+                d'excellence qui nous animent. C'est avec cette énergie et cette passion que nous visons une ambition
+                commune : gagner la Ligue des Jeunes Entrepreneurs (LJE) et faire rayonner notre savoir-faire.
+              </p>
+            </div>
+            <div className="mx-auto grid w-full max-w-4xl gap-8 sm:grid-cols-2">
+              <div className="rounded-3xl border border-amber-500/10 bg-neutral-900/70 p-8 text-left shadow-xl shadow-black/30 backdrop-blur">
+                <h3 className="text-lg font-semibold tracking-[0.2em] text-amber-200 uppercase">Notre promesse</h3>
+                <p className="mt-4 text-sm leading-relaxed text-neutral-300">
+                  Créer des rituels élégants et responsables, ancrés dans l'artisanat et l'innovation. Chaque détail compte
+                  pour offrir à nos clients un moment suspendu, symbole de l'exigence qui nous rapproche du titre LJE.
+                </p>
+              </div>
+              <div className="rounded-3xl border border-amber-500/10 bg-neutral-900/70 p-8 text-left shadow-xl shadow-black/30 backdrop-blur">
+                <h3 className="text-lg font-semibold tracking-[0.2em] text-amber-200 uppercase">Notre motivation</h3>
+                <p className="mt-4 text-sm leading-relaxed text-neutral-300">
+                  Porter haut les couleurs d'une équipe soudée, créative et audacieuse. Remporter la LJE serait la preuve que
+                  notre vision résonne et inspire, un tremplin pour partager notre univers avec encore plus de passionnés.
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="#"
+                className="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-neutral-900 shadow-lg shadow-black/30 transition hover:bg-amber-300"
+              >
+                Soutenir notre équipe
+              </a>
+              <a
+                href="mailto:contact@aquadrop.com"
+                className="inline-flex items-center justify-center rounded-full border border-amber-200/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200 transition hover:bg-amber-200/10"
+              >
+                Nous écrire
+              </a>
             </div>
           </div>
         </section>
