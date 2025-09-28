@@ -98,7 +98,7 @@ function App() {
         <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-neutral-900/40" />
 
         <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center gap-12 px-6 py-24 sm:px-10 lg:px-16">
-          <LogoMark />
+
           <div className="inline-flex items-center gap-3 self-start rounded-full bg-amber-500/20 px-5 py-2 text-sm font-medium uppercase tracking-[0.3em] text-amber-200 backdrop-blur-md">
             Nouveauté
           </div>
