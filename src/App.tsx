@@ -35,36 +35,36 @@ const products = [
 
 function App() {
   return (
-    <div className="min-h-screen bg-stone-50 text-stone-900">
+    <div className="min-h-screen bg-neutral-950 text-amber-50">
       <header className="relative isolate overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1600&q=80"
           alt="Ambiance spa luxueuse"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/70 via-stone-900/40 to-stone-900/10" />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/20 via-transparent to-stone-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-neutral-900/55 to-neutral-800/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-neutral-900/40" />
 
         <div className="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col justify-center gap-12 px-6 py-24 sm:px-10 lg:px-16">
-          <div className="inline-flex items-center gap-3 self-start rounded-full bg-white/10 px-5 py-2 text-sm font-medium uppercase tracking-[0.3em] text-stone-100 backdrop-blur-md">
+          <div className="inline-flex items-center gap-3 self-start rounded-full bg-amber-500/20 px-5 py-2 text-sm font-medium uppercase tracking-[0.3em] text-amber-200 backdrop-blur-md">
             Nouveauté
           </div>
-          <div className="max-w-xl space-y-6 text-stone-100">
-            <p className="text-sm uppercase tracking-[0.6em] text-stone-200/80">
+          <div className="max-w-xl space-y-6 text-amber-100">
+            <p className="text-sm uppercase tracking-[0.6em] text-amber-300/80">
               AquaDrop Ritual Collection
             </p>
-            <h1 className="text-4xl font-light leading-tight text-stone-50 sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-light leading-tight text-amber-50 sm:text-5xl lg:text-6xl">
               La sérénité inspire chaque geste de soin
             </h1>
-            <p className="text-base leading-relaxed text-stone-200 sm:text-lg">
+            <p className="text-base leading-relaxed text-amber-100/80 sm:text-lg">
               Une harmonie délicate de textures sensorielles et de fragrances profondes, imaginée pour
               transformer votre routine quotidienne en cérémonial précieux.
             </p>
             <div className="flex flex-wrap items-center gap-4 pt-6">
-              <button className="rounded-full bg-white/90 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-stone-900 shadow-lg shadow-stone-950/10 transition hover:bg-white">
+              <button className="rounded-full bg-amber-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-neutral-900 shadow-lg shadow-black/20 transition hover:bg-amber-300">
                 Découvrir la collection
               </button>
-              <button className="rounded-full border border-white/60 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-white transition hover:bg-white/10">
+              <button className="rounded-full border border-amber-200/70 px-6 py-3 text-sm font-semibold uppercase tracking-[0.25em] text-amber-200 transition hover:bg-amber-200/10">
                 Explorer nos rituels
               </button>
             </div>
@@ -74,20 +74,20 @@ function App() {
 
       <main>
         <section className="relative isolate px-6 pb-24 pt-28 sm:px-10 lg:px-16">
-          <div className="absolute inset-x-0 top-0 -z-10 h-1/2 bg-gradient-to-b from-stone-900/10 via-stone-100 to-transparent" />
+          <div className="absolute inset-x-0 top-0 -z-10 h-1/2 bg-gradient-to-b from-amber-500/10 via-transparent to-transparent" />
           <div className="mx-auto flex max-w-6xl flex-col gap-10">
             <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
               <div className="space-y-3">
-                <p className="text-sm uppercase tracking-[0.5em] text-stone-500">Éditions limitées</p>
-                <h2 className="text-3xl font-light text-stone-900 sm:text-4xl">Packshots sculpturaux</h2>
-                <p className="max-w-xl text-base leading-relaxed text-stone-600">
+                <p className="text-sm uppercase tracking-[0.5em] text-amber-400/80">Éditions limitées</p>
+                <h2 className="text-3xl font-light text-amber-50 sm:text-4xl">Packshots sculpturaux</h2>
+                <p className="max-w-xl text-base leading-relaxed text-neutral-300">
                   Chaque produit est mis en scène dans une lumière douce et minérale pour révéler l'éclat des
                   textures et souligner un univers raffiné digne des vitrines Rituals.
                 </p>
               </div>
               <a
                 href="#"
-                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-stone-700 transition hover:text-stone-950"
+                className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-amber-200 transition hover:text-amber-100"
               >
                 Voir tous les produits
                 <span aria-hidden className="text-lg">→</span>
@@ -98,29 +98,29 @@ function App() {
               {products.map((product) => (
                 <article
                   key={product.name}
-                  className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white/80 shadow-xl shadow-stone-300/20 ring-1 ring-stone-200 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                  className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-neutral-900/80 shadow-xl shadow-black/40 ring-1 ring-amber-500/10 backdrop-blur-sm transition duration-500 hover:-translate-y-1 hover:shadow-black/60"
                 >
-                  <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-stone-100 via-stone-50 to-stone-200">
+                  <div className="relative aspect-[3/4] overflow-hidden bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-700">
                     <img
                       src={product.image}
                       alt={product.name}
                       className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-stone-950/10" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-neutral-950/40" />
                   </div>
                   <div className="flex flex-1 flex-col gap-4 px-6 pb-10 pt-8">
                     <div className="space-y-3">
-                      <h3 className="text-xl font-medium tracking-wide text-stone-900">{product.name}</h3>
-                      <p className="text-sm leading-relaxed text-stone-600">{product.description}</p>
+                      <h3 className="text-xl font-medium tracking-wide text-amber-100">{product.name}</h3>
+                      <p className="text-sm leading-relaxed text-neutral-300">{product.description}</p>
                     </div>
                     <div className="mt-auto flex items-center justify-between">
-                      <span className="text-base font-semibold text-stone-800">{product.price}</span>
-                      <button className="rounded-full border border-stone-300 px-5 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-stone-700 transition hover:border-stone-900 hover:text-stone-900">
+                      <span className="text-base font-semibold text-amber-300">{product.price}</span>
+                      <button className="rounded-full border border-amber-500/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.4em] text-amber-200 transition hover:border-amber-400 hover:text-amber-100">
                         Ajouter
                       </button>
                     </div>
                   </div>
-                  <div className="pointer-events-none absolute inset-x-10 bottom-6 h-12 rounded-full bg-stone-500/10 blur-3xl transition duration-700 group-hover:opacity-0" />
+                  <div className="pointer-events-none absolute inset-x-10 bottom-6 h-12 rounded-full bg-amber-400/10 blur-3xl transition duration-700 group-hover:opacity-0" />
                 </article>
               ))}
             </div>
@@ -128,17 +128,17 @@ function App() {
         </section>
       </main>
 
-      <footer className="border-t border-stone-200 bg-white/60 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-stone-500 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16">
+      <footer className="border-t border-neutral-800/80 bg-neutral-950/80 backdrop-blur-sm">
+        <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-neutral-400 sm:flex-row sm:items-center sm:justify-between sm:px-10 lg:px-16">
           <p>© {new Date().getFullYear()} AquaDrop Rituals. Tous droits réservés.</p>
           <nav className="flex flex-wrap items-center gap-6">
-            <a href="#" className="transition hover:text-stone-900">
+            <a href="#" className="transition hover:text-amber-100">
               Mentions légales
             </a>
-            <a href="#" className="transition hover:text-stone-900">
+            <a href="#" className="transition hover:text-amber-100">
               Politique de confidentialité
             </a>
-            <a href="#" className="transition hover:text-stone-900">
+            <a href="#" className="transition hover:text-amber-100">
               Nous contacter
             </a>
           </nav>
