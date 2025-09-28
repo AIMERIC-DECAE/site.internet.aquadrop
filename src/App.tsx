@@ -1,4 +1,9 @@
-const features = [
+type Feature = {
+  title: string;
+  description: string;
+};
+
+const features: Feature[] = [
   {
     title: 'Formule éco-responsable',
     description:
