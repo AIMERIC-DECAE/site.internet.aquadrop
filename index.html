@@ -1556,18 +1556,29 @@
         });
 
         // Contact form handling
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            const subject = encodeURIComponent('AquaDrop – Contact de ' + name);
-            const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-            
-            window.location.href = `mailto:decaeaimeric@gmail.com?subject=${subject}&body=${body}`;
-        });
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const messageInput = document.getElementById('message');
+
+                if (!nameInput || !emailInput || !messageInput) {
+                    return;
+                }
+
+                const name = nameInput.value;
+                const email = emailInput.value;
+                const message = messageInput.value;
+
+                const subject = encodeURIComponent('AquaDrop – Contact de ' + name);
+                const body = encodeURIComponent(`Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+                window.location.href = `mailto:decaeaimeric@gmail.com?subject=${subject}&body=${body}`;
+            });
+        }
 
         // Parallax effect for hero section (subtle)
         let ticking = false;
