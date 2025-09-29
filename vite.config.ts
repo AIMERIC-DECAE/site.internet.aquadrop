@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/site.internet.aquadrop/',
+  base: '/site.internet.aquadrop/', //
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
