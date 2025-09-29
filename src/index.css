@@ -1,3 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    background-color: theme('colors.aquadrop.bg-deep');
+    color: theme('colors.aquadrop.ink-body');
+  }
+
+  html {
+    @apply bg-aquadrop-bg-deep text-aquadrop-ink-body;
+  }
+
+  body {
+    @apply min-h-screen bg-aquadrop-bg-deep font-body text-base text-aquadrop-ink-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading text-aquadrop-ink-primary;
+  }
+
+  h1 {
+    @apply text-4xl uppercase tracking-[0.32em] leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl tracking-[0.16em];
+  }
+
+  h3 {
+    @apply text-2xl tracking-[0.12em];
+  }
+
+  p,
+  li,
+  span,
+  label {
+    @apply text-aquadrop-ink-body;
+  }
+
+  a {
+    @apply font-medium text-aquadrop-ink-primary transition-colors duration-200;
+  }
+
+  a:hover,
+  a:focus-visible {
+    @apply underline decoration-2 decoration-aquadrop-ink-primary/80;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    @apply font-body text-sm text-aquadrop-ink-body;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply w-full rounded-[12px] border border-[#25473D] bg-aquadrop-surface-1/80 px-4 py-3 text-sm placeholder:text-aquadrop-neutral-700 focus:outline-none focus:ring-2 focus:ring-aquadrop-ink-primary;
+  }
+
+  ::selection {
+    @apply bg-aquadrop-ink-primary/30 text-aquadrop-neutral-100;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-aquadrop-ink-primary ring-offset-2 ring-offset-aquadrop-bg-deep;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-[14px] text-sm font-semibold uppercase tracking-[0.22em] transition-colors duration-200 focus-visible:ring-2 focus-visible:ring-aquadrop-ink-primary focus-visible:ring-offset-2 focus-visible:ring-offset-aquadrop-bg-deep;
+  }
+
+  .btn-primary {
+    @apply btn bg-aquadrop-ink-primary text-aquadrop-bg-deep shadow-none hover:bg-[#cda95d];
+  }
+
+  .btn-secondary {
+    @apply btn border border-aquadrop-ink-primary bg-transparent text-aquadrop-ink-primary hover:bg-aquadrop-surface-1/70;
+  }
+
+  .card {
+    @apply rounded-[16px] border border-white/5 bg-aquadrop-surface-1/80 p-6 shadow-aquadrop-soft backdrop-blur-sm transition-transform duration-300 ease-out hover:-translate-y-1;
+  }
+
+  .badge {
+    @apply inline-flex items-center rounded-full px-4 py-1 text-xs font-semibold uppercase tracking-[0.28em];
+  }
+
+  .badge-teal {
+    @apply badge bg-aquadrop-accent-teal text-aquadrop-neutral-100;
+  }
+
+  .badge-olive {
+    @apply badge bg-aquadrop-accent-olive text-aquadrop-neutral-100;
+  }
+
+  .badge-sand {
+    @apply badge bg-aquadrop-accent-sand text-aquadrop-bg-deep;
+  }
+
+  .form-helper {
+    @apply mt-2 text-xs uppercase tracking-[0.24em] text-aquadrop-neutral-700;
+  }
+}
+
+@layer utilities {
+  .text-shadow-subtle {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
